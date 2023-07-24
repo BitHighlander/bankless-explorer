@@ -516,27 +516,8 @@ const Header = () => {
             Navigation Options
           </DrawerHeader>
           <DrawerBody>
-            <Button w="full" mb={2} onClick={() => handleNavigate("/dapps")}>
-              Explore Dapps
-            </Button>
-            <Button
-              w="full"
-              mb={2}
-              onClick={() => handleNavigate("/blockchains")}
-            >
-              Explore Blockchains
-            </Button>
-            <Button w="full" mb={2} onClick={() => handleNavigate("/assets")}>
-              Explore Assets
-            </Button>
-            <Button w="full" mb={2} onClick={() => handleNavigate("/nodes")}>
-              Explore Nodes
-            </Button>
-            <Button w="full" mb={2} onClick={() => handleNavigate("/pioneers")}>
-              Pioneer Leaderboard
-            </Button>
-            <Button w="full" mb={2} onClick={() => handleNavigate("/chart")}>
-              Chart Discovery
+            <Button w="full" mb={2} onClick={() => handleNavigate("/lp")}>
+              lp
             </Button>
           </DrawerBody>
         </DrawerContent>
