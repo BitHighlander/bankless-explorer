@@ -42,22 +42,19 @@ const MapWithPins = () => {
   return (
     <Box textAlign="center">
       <MapContainer
-        center={[51.505, -0.09]}
-        zoom={13}
         style={{ height: "400px" }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
         />
-        {locations.map((location) => (
+        {locations.map((location:any) => (
           <Marker position={location.location} key={location.terminalId}>
             <Popup>{location.terminalName}</Popup>
           </Marker>
         ))}
       </MapContainer>
       <Stack spacing={4} marginTop={4}>
-        {locations.map((terminal) => (
+        {locations.map((terminal:any) => (
           <Box
             key={terminal.terminalName}
             borderWidth="1px"

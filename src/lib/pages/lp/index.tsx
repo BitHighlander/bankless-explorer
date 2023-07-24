@@ -25,19 +25,19 @@ const LP = () => {
   const { terminalName } = useParams<{ terminalName: string }>();
   const { state } = usePioneer();
   const { api, wallet, app } = state;
-  const [sessionId, setSessionId] = useState<string>("");
-  const [atmAddress, setAtmAddress] = useState<string>("");
+  const [sessionId, setSessionId] = useState<string>();
+  const [atmAddress, setAtmAddress] = useState<string>();
   const [amount, setAmount] = useState<number>(10);
-  const [rate, setRate] = useState<number>("");
-  const [usd, setUsd] = useState<number>("");
-  const [dai, setDai] = useState<number>("");
+  const [rate, setRate] = useState<number>();
+  const [usd, setUsd] = useState<number>();
+  const [dai, setDai] = useState<number>();
 
   const onSend = async () => {
     try {
       const ASSET = "DAI";
       const balance = app.balances.filter((e: any) => e.symbol === ASSET);
       console.log("balance: ", balance);
-      if (!balance) Alert(`No balance for asset ${ASSET}`);
+      if (!balance) alert(`No balance for asset ${ASSET}`);
       const TEST_AMOUNT = amount.toString(); // Use the selected amount
       // user selects balance to send
       const selectedBalance = balance[0];

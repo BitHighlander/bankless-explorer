@@ -4,7 +4,7 @@ import { MdCheckCircle } from "react-icons/md";
 
 import { usePioneer } from "lib/context/Pioneer";
 
-const Sessions = (terminalName: string) => {
+const Sessions = (terminalName: any) => {
   const { state } = usePioneer();
   const { api } = state;
   const [sessions, setSessions] = useState([]);
@@ -12,7 +12,7 @@ const Sessions = (terminalName: string) => {
   const onStart = async () => {
     try {
       console.log("terminalName: ", terminalName);
-      console.log("terminalName: ", terminalName.terminalName);
+      console.log("terminalName: ", terminalName?.terminalName);
       // get private info
       let terminalInfo = await api.TerminalPrivate({
         terminalName: terminalName.terminalName,
@@ -36,7 +36,7 @@ const Sessions = (terminalName: string) => {
 
   return (
     <List spacing={3}>
-      {sessions.map((session) => (
+      {sessions.map((session:any) => (
         <ListItem key={session.sessionId}>
           <ListIcon as={MdCheckCircle} color="green.500" />
           <Text>{session.time}</Text>
