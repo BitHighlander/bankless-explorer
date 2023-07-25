@@ -39,7 +39,7 @@ const CapTable = (terminalName: any) => {
   return (
     <div>
       {terminalName.terminalName}
-      {owners.map((owner) => (
+      {owners.map((owner:any) => (
         <div key={owner.address}>
           <Text>Address: {owner.address}</Text>
           <Text>Percent: {owner.percentage}%</Text>
